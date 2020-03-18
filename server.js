@@ -29,6 +29,7 @@ app.listen(port, error => {
 });
 
 app.post("/payment", (req, res) => {
+  console.log("paymeeent");
   const body = {
     source: req.body.token.id,
     amount: req.body.amount,
@@ -36,10 +37,12 @@ app.post("/payment", (req, res) => {
   };
 
   stripe.charges.create(body, (stripeErr, stripeRes) => {
+    console.log("holaaaaa");
     if (stripeErr) {
+      console.log("error", stripeErr);
       res.status(500).send({ error: stripeErr });
     } else {
-      console.log(stripeRes);
+      console.log("resssss", stripeRes);
       res.status(200).send({ success: stripeRes });
     }
   });
