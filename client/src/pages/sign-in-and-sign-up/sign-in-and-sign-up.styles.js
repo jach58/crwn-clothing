@@ -12,6 +12,11 @@ export const SignInAndSignUpContainer = styled.div`
     align-items: center;
     > *:first-child {
       margin-bottom: 50px;
+      padding: 20px;
+    }
+
+    > *:last-child {
+      padding: 20px;
     }
   }
 `;
